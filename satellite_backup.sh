@@ -7,7 +7,8 @@
 #
 # Description:
 # ------------
-# This script creates a Satellite backup in offline mode. This 
+# This script creates a Satellite backup in offline mode with all 
+# the Satellite configurations, certificates and Pulp data. This 
 # means that the Satellite services are unavailable during the
 # backup process. This ensures a consistent backup of your data.
 # Please keep this in mind and schedule your Satellite backup at
