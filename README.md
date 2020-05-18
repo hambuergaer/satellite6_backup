@@ -19,7 +19,7 @@ You need a dedicated volume (NFS, iSCSI, SAN LUN...) which you automatically mou
 - MAX_DAYS            -> The time before the script starts 
                          deleteing backups older MAY_DAYS
 - FULL_BACKUP_WEEKDAY -> The weekday when the full backup
-                         should be created. Default is Sat.
+                         should be created. Default is Saturday (see "man date", where 0 is Sunday).
 
 ## Run the backup script
 To execute the backup script you just need to start the script as follows:
