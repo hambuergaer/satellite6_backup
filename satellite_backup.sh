@@ -13,6 +13,7 @@
 # backup process. This ensures a consistent backup of your data.
 # Please keep this in mind and schedule your Satellite backup at
 # a time where Satellite service unavailability is not a problem.
+# Backups older than MAX_DAYS will be deleted automatically.
 # Use this script on your own risk!!! I don't guarantee for any 
 # functionalities. Please test this script in a proper test
 # environment first if you are unsure of using this script.
