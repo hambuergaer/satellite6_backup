@@ -83,7 +83,7 @@ if [[ $(date +%w) == $ $FULL_BACKUP_WEEKDAY ]]; then
     echo "$DATE_FINISHED: ERROR: Full backup $BACKUP_DESTINATION/satellite-backup-$DATE-full-$(date +%w) could not be created. Please verify." >> $LOG_FILE
   fi
 else
-  LAST=$(ls -td -- $BACKUP_DESTINATION/*/ | head -n 1)
+  LAST=$(ls -td -- $BACKUP_DESTINATION/*/*/ | head -n 1)
   DATE_START=$(date "+%Y-%m-%d %H:%M:%S")
   echo "$DATE_START: INFO: Incremental backup $BACKUP_DESTINATION/satellite-backup-$DATE-incremental-$(date +%w) started." >> $LOG_FILE
   satellite-maintain backup offline --assumeyes --incremental "$LAST" $BACKUP_DESTINATION/satellite-backup-$DATE-incremental-$(date +%w)
