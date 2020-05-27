@@ -71,10 +71,10 @@ DATE_DELETE=$(date "+%Y-%m-%d %H:%M:%S")
 find $BACKUP_DESTINATION/* -type d -mtime +$MAX_DAYS -prune -exec bash -c "echo $DATE_DELETE: INFO: Delete backup {} >> $LOG_FILE; rm -rf {}" \;
 
 # Create full backup on weekday 6 (Saturday), else create incremental backup and use $LAST incremental backup as source.
-if [[ $(date +%w) == $ $FULL_BACKUP_WEEKDAY ]]; then
+if [[ $(date +%w) == $FULL_BACKUP_WEEKDAY ]]; then
   DATE_START=$(date "+%Y-%m-%d %H:%M:%S")
-  echo "$DATA_START: INFO: Full backup $BACKUP_DESTINATION/satellite-backup-$DATE-full started." >> $LOG_FILE
-  satellite-maintain backup offline --assumeyes --preserve-directory $BACKUP_DESTINATION/satellite-backup-$DATE-full-$(date +%w)
+  echo "$DATE_START: INFO: Full backup $BACKUP_DESTINATION/satellite-backup-$DATE-full started." >> $LOG_FILE
+  satellite-maintain backup offline --assumeyes $BACKUP_DESTINATION/satellite-backup-$DATE-full-$(date +%w)
   if [ $? -eq 0 ]; then
     DATE_FINISHED=$(date "+%Y-%m-%d %H:%M:%S")
     echo "$DATE_FINISHED: SUCCESS: Full backup $BACKUP_DESTINATION/satellite-backup-$DATE-full-$(date +%w) created." >> $LOG_FILE
