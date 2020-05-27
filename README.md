@@ -24,6 +24,6 @@ You need a dedicated volume (NFS, iSCSI, SAN LUN...) which you automatically mou
 ## Run the backup script
 To execute the backup script you just need to start the script as follows:
 ```
-/usr/local/bin/satellite_backup
+/usr/local/bin/satellite_backup.sh
 ```
 Depending on the Pulp data the full backup can take some hours.
